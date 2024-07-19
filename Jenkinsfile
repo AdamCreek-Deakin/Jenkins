@@ -18,7 +18,7 @@ pipeline {
                 success {
                     //emailext attachLog: true, 
 					to: 'a.creek@bigpond.com',
-					subject: 'Unit and Integration Test: Success', 
+					subject: 'Unit and Integration Test: Successful', 
 					body: 'Stage 2 successfully implemented. Refer Report.' 
                 }
                 failure {
@@ -46,7 +46,7 @@ pipeline {
                 success {
                     //emailext attachLog: true, 
 					to: 'a.creek@bigpond.com',
-					subject: 'Security Scan Test: Success', 
+					subject: 'Security Scan Test: Successful', 
 					body: 'Stage 4 successfully implemented. Refer Report.' 
                 }
                 failure {
