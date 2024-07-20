@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Stage 1:'
-                echo 'Build Automation Tool: Maven '
+                echo 'Build Automation Tool: Maven is used to conduct automatic testing '
             }
         }
 
