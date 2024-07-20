@@ -14,7 +14,7 @@ pipeline {
             steps {
                 echo 'Stage 2: Unit and Integration Tests'
 		echo 'Detail: Run unit tests to ensure code operates as expected. Run integration tests to ensure components operate together as expected'
-                echo 'Test Automation Tool:'
+                echo 'Test Automation Tool: Junit tool is used for unit testing'
             }
             post {
                 success {
@@ -22,7 +22,9 @@ pipeline {
 			    	attachLog: true, 
 				to: 'adamcreek16@gmail.com',
 				subject: 'Unit and Integration Test: Successful', 
-				body: 'Stage 2 successfully implemented. Refer Report.' 
+				//body: 'Stage 2 successfully implemented. Refer Report.' 
+			    	body: "Unit and Intergration Tests was ${currentBuild.result}!\n Build Number: ${currentBuild.number}\n\n",
+
 			    )
                 	}
                 failure {
@@ -40,7 +42,7 @@ pipeline {
             steps {
                 echo 'Stage 3: Code Analysis'
 		echo 'Detail: Analyse code to ensure it meets industry standards'
-                echo 'Code Analysis Tool:'
+                echo 'Code Analysis Tool: SonarQube is used for code analysis'
             }
         }
 
@@ -48,7 +50,7 @@ pipeline {
             steps {
                 echo 'Stage 4: Security Scan'
 		echo 'Detail: Perform security scan to check for vulnerabilities'
-                echo 'Security Scan Tool:'
+                echo 'Security Scan Tool: OWASP Tool is used to perform security vulnerability scans'
             }
             post {
                 success {
@@ -74,7 +76,6 @@ pipeline {
             steps {
                 echo 'Stage 5: Deploy to Staging'
 		echo 'Detail: Deploy application to staging environment (AWS EC2)'
-                echo 'Deployment Tool:'
             }
         }
 
@@ -82,7 +83,6 @@ pipeline {
             steps {
                 echo 'Stage 6: Integration Tests on Staging'
 		echo 'Detail: Conduct integration tests in staging environment to ensure functions as expected in production-like environment'
-                echo 'Integration Testing Tool:'
             }
         }
 
@@ -90,7 +90,6 @@ pipeline {
             steps {
                 echo 'Stage 7: Deploy to Production'
 		echo 'Detail: Deploy application to production environment (AWS EC2)'
-                echo 'Production Deployment Tool:'
             }
         }
     }
