@@ -19,16 +19,16 @@ pipeline {
             post {
                 success {
                     emailext(
-			    	attachLog: true, 
-				to: 'a.creek@bigpond.com',
+			    	//attachLog: true, 
+				to: 'adamcreek16@gmail.com',
 				subject: 'Unit and Integration Test: Successful', 
 				body: 'Stage 2 successfully implemented. Refer Report.'
 			    )
                 	}
                 failure {
                     emailext(
-			    	attachLog: true, 
-				to: 'a.creek@bigpond.com',
+			    	//attachLog: true, 
+				to: 'adamcreek16@gmail.com',
 				subject: 'Unit and Integration Test: Failure', 
 				body: 'Stage 2 unsuccessfully implemented. Refer Report.' 
 			    )
@@ -53,16 +53,16 @@ pipeline {
             post {
                 success {
                     emailext(
-			    	attachLog: true, 
-				to: 'a.creek@bigpond.com',
+			    	//attachLog: true, 
+				to: 'adamcreek16@gmail.com',
 				subject: 'Security Scan Test: Successful', 
 				body: 'Stage 4 successfully implemented. Refer Report.' 
 			    )
                 	}
                 failure {
                     emailext( 
-			    	attachLog: true, 
-				to: 'a.creek@bigpond.com',
+			    	//attachLog: true, 
+				to: 'adamcreek16@gmail.com',
 				subject: 'Security Scan Test: Failure', 
 				body: 'Stage 4 unsuccessfully implemented. Refer Report.' 
 			    )
