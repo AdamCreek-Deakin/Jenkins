@@ -6,7 +6,7 @@ pipeline {
             steps {
                 echo 'Stage 1: Build'
 		echo 'Detail: Build code using build automation tool which will complie and package'
-                echo 'Build Automation Tool: Maven is used to conduct build automation testing'
+                echo 'Build Automation Tool: Maven is used to conduct build automation testing.'
             }
         }
 
