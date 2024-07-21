@@ -14,12 +14,12 @@ pipeline {
             steps {
                 echo 'Stage 2: Unit and Integration Tests'
 		echo 'Detail: Run unit tests to ensure code operates as expected. Run integration tests to ensure components operate together as expected'
-                echo 'Test Automation Tool: Junit tool is used for unit testing'
+                echo 'Test Automation Tool: Junit 5 tool is the testing framework used for unit testing'
             }
             post {
                 success {
                     emailext(
-			    	//attachLog: true, 
+			    	attachLog: true, 
 				to: 'adamcreek16@gmail.com',
 				subject: 'Unit and Integration Test: Successful', 
 				body: 'Stage 2 successfully implemented. Refer Report.'
@@ -27,7 +27,7 @@ pipeline {
                 	}
                 failure {
                     emailext(
-			    	//attachLog: true, 
+			    	attachLog: true, 
 				to: 'adamcreek16@gmail.com',
 				subject: 'Unit and Integration Test: Failure', 
 				body: 'Stage 2 unsuccessfully implemented. Refer Report.' 
@@ -40,7 +40,7 @@ pipeline {
             steps {
                 echo 'Stage 3: Code Analysis'
 		echo 'Detail: Analyse code to ensure it meets industry standards'
-                echo 'Code Analysis Tool: SonarQube is used for code analysis'
+                echo 'Code Analysis Tool: SonarQube is used for static code analysis'
             }
         }
 
@@ -48,12 +48,12 @@ pipeline {
             steps {
                 echo 'Stage 4: Security Scan'
 		echo 'Detail: Perform security scan to check for vulnerabilities'
-                echo 'Security Scan Tool: OWASP Tool is used to perform security vulnerability scans'
+                echo 'Security Scan Tool: OWASP Security Tool is used to perform security vulnerability scans'
             }
             post {
                 success {
                     emailext(
-			    	//attachLog: true, 
+			    	attachLog: true, 
 				to: 'adamcreek16@gmail.com',
 				subject: 'Security Scan Test: Successful', 
 				body: 'Stage 4 successfully implemented. Refer Report.' 
@@ -61,7 +61,7 @@ pipeline {
                 	}
                 failure {
                     emailext( 
-			    	//attachLog: true, 
+			    	attachLog: true, 
 				to: 'adamcreek16@gmail.com',
 				subject: 'Security Scan Test: Failure', 
 				body: 'Stage 4 unsuccessfully implemented. Refer Report.' 
